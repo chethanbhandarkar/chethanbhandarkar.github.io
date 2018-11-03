@@ -1,555 +1,241 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <head>
+    
+    
     <style>
-    
-        .imu:hover
+       #topview
         {
-    
-            transform:scale3d(1.1,1.1,1.1);
-            transition: all ease-in 0.5s;
+background-color: blue;
+            color: white;
+            font-family:cursive;
+         font-style: oblique;
+            font-size: 30px;
+            height: 100px;
         }
-        .row div{
-            
-           
-        }
-        
-        body{
-            
-            
-            margin:0px;
-            padding:0px;
-        }
-        .container-fluid{
-            
-                  margin:0px;
-            padding:0px;
-            
-        }
-        .col img{
-            
-            max-height: 50%;
-        }
-        
-        .carosel-item
+         #statusview
         {
-            
-            
-            position: absolute;
+background-color: darkcyan;
+            color: black;
+            font-family:sans-serif;
+         
+            font-size: 15px;
+            height:300px;
+        }
+        body
+        {
+           
+          background-color:
+        }
+        #bulbonid {
+background-color:
+            border-color:green;
+          border-radius:60px;
+        width: 100px;
+            height:50px;
+             border-bottom-style:ridge;
+         box-shadow: 1px 4px 7px 0.5px;
         }
         
-        #myvideo{
-height: 120vh;
-  
-  
- min-height: 100%;
-    min-width: 100%;
-position: absolute;
-    right: 0;
-top:0;
-    bottom:0;
-  
-}
-        
-        .typewriter h1 {
-  color: #fff;
- position: relative;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 3.5s steps(30, end),
-    blink-caret .5s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 50% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
-}
-        
-        
-        
-        
-    </style>
-   
-   <script>
-    
-    
-    
-    
-    
-    </script>
-   
-   
-</head>
-<body>
-     <div class="container.fluid">
-     <nav class="navbar navbar-expand-md bg-dark navbar-dark  " >
-       
-          <a class="navbar-brand" id="tex" href="#"><img  class="img-fluid" src="https://images.vexels.com/media/users/3/144290/isolated/preview/c48f8a4d4694861b7961c16e0ff565de-arrow-wing-travel-logo-by-vexels.png" width="80" height="80" alt="">TRAVELNow</a>
-           <button class="navbar-toggler bg-secondary" data-toggle="collapse" data-target="#mainNav" >
-               <span class="navbar-toggler-icon"></span>
-           </button> 
+        #bulbonid:active{
+            background-color:darkgreen;
             
-            <div class="collapse navbar-collapse " id="mainNav">
-                <div class="navbar-nav ml-auto">
-                  
-                  <a class="nav-item nav-link active" href="#">Home</a>
-                     <a class="nav-item nav-link" href="#">About</a>
-                       <a class="nav-item nav-link" href="#">Location</a>
-                         <a class="nav-item nav-link" href="#">Help</a>
-                         <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
-           
-                </div>
+        }
+           #bulboffid{
+background-color:;
+                border-color:;
+                border-bottom-style:ridge;
           
-            </div>
-     
-        </div>
-      
-     </nav>
-          <!--Carousel Wrapper-->
-          <div class="jumbotron jumbotron-fluid bg-dark ">
-          
-          <div class="container">
-              
-              <div class="row">
-                  
-                   <div class="col-sm-6  col-md-6 col-lg-9 col-xs-9">
-                    <div class="container-fluid">
-                        <div class="typewriter">
-                    <h1 class="display-1">
-                        TRAVELNow
-                    </h1>
-                    <h6 class="display-6 text-muted">|   The Best Deals For Your Dream Journey   |</h6>
-                  </div>
-                  
-                        
-                    </div>
-                      
-                  
-                  
-                  
-              </div>
-              <div class="col-sm-6  col-md-6 col-lg-3 col-xs-3">
-                    
-                    <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
-        <a class="nav-link active " href="#signup" data-toggle="tab"  >SIGNUP</a>
-         <a class="nav-link" href="#login" data-toggle="tab">LOG IN</a>
-          
- </nav>
-
-
-
-<div class="tab-content py-5">
-     <div class="tab-pane active" id="signup">
-
-
-
-  <form  action="my.php"  method="post">
-  <div class="form-group "  >
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="username">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="password" >
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <center>
-  <button type="submit" class="btn btn-primary" name="submit">SIGN UP</button></center>
-</form>
-                  </div>  
-                  
-                  
-              <div class="tab-pane " id="login">
-
-         
-         
-
-  <form>
-  <div class="form-group " action="my.php" method="post">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="username">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="password" >
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <center><button type="submit" class="btn btn-primary" name="submit">LOG IN</button></center>
-</form>
-                  </div>      
-                  
-                  
-                  
-                  
-          </div>
-     </div>
-
-
-
-
-
-
-
-
-
-
-          </div>
-   
-          </div>
-     </div>
-
-
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-     
-      <div class="container">
-      <center>
-          <h3 class="display-4 text-muted ">Trending Destinations</h3>
-      </center>
-      <p><br></p>
-      
-   <div class="row">
-  <div class="col-sm-6  col-xs-6 col-lg-3">
-            <div class="card border border-muted bg-white img-fluid">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTR0i0Xg2Q1yl6tcXy2mmFhY2Jpo1snIT2A7fMMJRgrl3g0cmSw" class="card-img-top img-fluid  imu" >
-              <div class="card-block">
-                 <h3 class="card-title">Dehradhun</h3>
-                 
-                  <p >
-                       Dehradun
-                  </p>
-                  
-                  <center>
-                       <button type="button" class="btn btn-dark  " href="">
-                     BUY TICKET
-                 </button>
-                 <button type="button" class="btn btn-secondary   " href="">
-                     LIKE
-                 </button>
-                  <button type="button" class="btn btn-info" href="">
-                    RATE
-                 </button>
-                 <p>
-                     <br>
-                 </p>
-                 </center>
-              </div>
-            </div>
-             
-         </div>
- <div class="col-sm-6 col-lg-3">
-            <div class="card border border-muted bg-white">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqG1yPk4ApwKtWha-L8bspJKVJCbPZ8_pgZi7U7V5Flb2Hm7Cs" class="card-img-top imu">
-              <div class="card-block">
-                 <h3 class="card-title">Indore</h3>
-                 
-                  <p>
-                 Indore,M.P
-                  </p>
-                    <center>
-                       <button type="button" class="btn btn-dark  " href="">
-                     BUY TICKET
-                 </button>
-                 <button type="button" class="btn btn-secondary   " href="">
-                     LIKE
-                 </button>
-                  <button type="button" class="btn btn-info" href="">
-                    RATE
-                 </button>
-                 <p>
-                     <br>
-                 </p>
-                 </center>
-              </div>
-            </div>
-             
-         </div>
-<div class="col-sm-6 col-lg-3">
-            <div class="card border border-muted bg-white">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTUhhNv3R7sszE9-C4myCLNhp_6wR_MUV8BYQmBNFPsoBALsC2d" class="card-img-top imu">
-              <div class="card-block">
-                 <h3 class="card-title">Mangalore</h3>
-                 
-                  <p>
-                   Mangalore
-                  </p>
-                  <center>
-                       <button type="button" class="btn btn-dark  " href="">
-                     BUY TICKET
-                 </button>
-                 <button type="button" class="btn btn-secondary   " href="">
-                     LIKE
-                 </button>
-                  <button type="button" class="btn btn-info" href="">
-                    RATE
-                 </button>
-                 <p>
-                     <br>
-                 </p>
-                 </center>
-              </div>
-            </div>
-             
-         </div>
-  <div class="col-sm-6 col-lg-3">
-            <div class="card border border-muted bg-white">
-                <img src="http://nttoman.com/wp-content/uploads/2017/02/trekking-1742821_960_720.jpg" class="card-img-top imu">
-              <div class="card-block">
-                 <h3 class="card-title">Manali</h3>
-                 
-                  <p>
-                 Kullu Manali
-                  </p>
-                  <center>
-                       <button type="button" class="btn btn-dark  " href="">
-                     BUY TICKET
-                 </button>
-                 <button type="button" class="btn btn-secondary   " href="">
-                     LIKE
-                 </button>
-                  <button type="button" class="btn btn-info" href="">
-                    RATE
-                 </button>
-                 <p>
-                     <br>
-                 </p>
-                 </center>
-              </div>
-            </div>
-             
-         </div>
- </div>
- 
- <h2 class="display-4 text-center py-5">Get The Best Deals at TRAVELNow</h2>
- <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
-        <a class="nav-link active " href="#luxury" data-toggle="tab"  >LUXURY</a>
-         <a class="nav-link" href="#classa" data-toggle="tab">CLASS-A</a>
-          <a class="nav-link" href="#classb" data-toggle="tab">CLASS-B</a>
-           <a class="nav-link" href="#classc" data-toggle="tab">CLASS-C</a>
-     
-     
-     
- </nav>
- 
- 
- <div class="tab-content py-5">
-     <div class="tab-pane active" id="luxury">
-         <h3>LUXURY</h3>
-         <p>
-           
-Buses may be used for scheduled bus transport, scheduled coach transport, school transport, private hire, or tourism; promotional buses may be used for political campaigns and others are privately operated for a wide range of purposes, including rock and pop band tour vehicles.
-
-         </p> <center>
-                       <button type="button" class="btn btn-dark  " href="">
-                     BUY TICKET
-                 </button>
-                 <button type="button" class="btn btn-secondary   " href="">
-                     LIKE
-                 </button>
-                  <button type="button" class="btn btn-info" href="">
-                    RATE
-                 </button>
-                 <p>
-                     <br>
-                 </p>
-                 </center>
-     </div>
- 
-  <div class="tab-pane"  id="classa">
-         <h3>CLASS-A</h3>
-         <p>
-Including rock and pop band tour vehicles.     
-Buses may be used for scheduled bus transport, scheduled coach transport, school transport, private hire, or tourism; promotional buses may be used for political campaigns and others are privately operated for a wide range of purposes, including rock and pop band tour vehicles.
-
-         </p> <center>
-                       <button type="button" class="btn btn-dark  " href="">
-                     BUY TICKET
-                 </button>
-                 <button type="button" class="btn btn-secondary   " href="">
-                     LIKE
-                 </button>
-                  <button type="button" class="btn btn-info" href="">
-                    RATE
-                 </button>
-                 <p>
-                     <br>
-                 </p>
-                 </center>
-     </div>
-
-  <div class="tab-pane"   id="classb">
-         <h3>CLASS-B</h3>
-         <p>
- private hire, or tourism; promotional buses may be used for political campaigns and others are privately operated for a wide range of purposes, including rock and pop band tour vehicles.       transport, school transport, private hire, or tourism; promotional buses may be used for political campaigns and others are privately operated for a wide range of purposes, including rock and pop band tour vehicles.
-
-         </p> <center>
-                       <button type="button" class="btn btn-dark  " href="">
-                     BUY TICKET
-                 </button>
-                 <button type="button" class="btn btn-secondary   " href="">
-                     LIKE
-                 </button>
-                  <button type="button" class="btn btn-info" href="">
-                    RATE
-                 </button>
-                 <p>
-                     <br>
-                 </p>
-                 </center>
-     </div>
- 
- 
-  <div class="tab-pane"  id="classc">
-         <h3>CLASS-C</h3>
-         <p>
-           
- school transport, private hire, or tourism; promotional buses may be used for political campaigns and others are privately operated for a wide range of purposes, including rock and pop band tour vehicles.
-
-         </p> <center>
-                       <button type="button" class="btn btn-dark  " href="">
-                     BUY TICKET
-                 </button>
-                 <button type="button" class="btn btn-secondary   " href="">
-                     LIKE
-                 </button>
-                  <button type="button" class="btn btn-info" href="">
-                    RATE
-                 </button>
-                 <p>
-                     <br>
-                 </p>
-                 </center>
-     </div>
-
- 
- 
- 
- 
- 
-</div>
-  
-  
-    <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-2" data-slide-to="1"></li>
-        <li data-target="#carousel-example-2" data-slide-to="2"></li>
-    </ol>
-    <!--/.Indicators-->
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-            <div class="view">
-              
-                <img class="d-block w-100 " src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide">
+          border-radius:60px;
+        width: 100px;
+            height:50px;
+                  box-shadow: 1px 4px 7px 0.5px;
+        }
+        #bulboffid:active{
+            background-color:darkred;
             
-                
-                 
-                <div class="mask rgba-black-light"></div>
-                
-            </div>
-            <div class="carousel-caption">
-                <h3 class="h3-responsive">9.5 Rating</h3>
-                <p>Best Travel Experiences</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <!--Mask color-->
-            <div class="view">
-                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
-                <div class="mask rgba-black-strong"></div>
-            </div>
-            <div class="carousel-caption">
-                <h3 class="h3-responsive">Reach in Time</h3>
-                <p>No Delays</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <!--Mask color-->
-            <div class="view">
-                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide">
-                <div class="mask rgba-black-slight"></div>
-            </div>
-            <div class="carousel-caption">
-                <h3 class="h3-responsive">We Care</h3>
-                <p>High Class Service</p>
-            </div>
-        </div>
-    </div>
-    <!--/.Slides-->
-    <!--Controls-->
-    <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-    <!--/.Controls-->
-</div>
-<!--/.Carousel Wrapper-->
+        }
+        
+         #fanonid {
+background-color:;
+            border-color:;
           
-      </div>
-      
-    
+        width: 100px;
+            height:50px;
+                border-radius:60px;
+               box-shadow: 1px 4px 7px 0.5px;
+        }
+        
+        #fanonid:active{
+            background-color:darkgreen;
+            
+        }
+           #fanoffid{
+background-color:;
+                border-color:;
+           border-bottom-style:ridge;
+         
+        width: 100px;
+            height:50px;
+                 border-radius:60px;
+                        box-shadow: 1px 4px 7px 0.5px;
+        }
+        #fanoffid:active{
+            background-color:darkred;
+            
+        }
+        </style>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
    
+    <script>
+        
+        
+        
+        
+        window.onload=function()
+        {
+        
+
+ var config = {
+    apiKey: "AIzaSyDqqJjnwEHgkerltsdHIkRJ4FL6eSPN3sY",
+    authDomain: "auto-test-timer.firebaseapp.com",
+    databaseURL: "https://auto-test-timer.firebaseio.com",
+    projectId: "auto-test-timer",
+    storageBucket: "auto-test-timer.appspot.com",
+    messagingSenderId: "828951253649"
+  };
+  firebase.initializeApp(config);
+
+console.log(firebase);
     
-    
-    
+    var database=firebase.database();
+            var bref=database.ref('Bulb');
+             var fref=database.ref('Fan');
+    var bulbref=database.ref('Bulb/');
+   var fanref=database.ref('Fan/');
+
+        var bulbonbut=document.getElementById("bulbonid");
+            var bulboffbut=document.getElementById("bulboffid");
+              var fanonbut=document.getElementById("fanonid");
+            var fanoffbut=document.getElementById("fanoffid");
+ 
+            //text
+            var answer=document.getElementById("ans");
+           var bulbtextvariable=document.getElementById("Bulbtextid");
+            var fantextvariable=document.getElementById("Fantextid"); bulbonbut.addEventListener('click',bulbonfunction);
+             bulboffbut.addEventListener('click',bulbofffunction);
+             fanonbut.addEventListener('click',fanonfunction);
+             fanoffbut.addEventListener('click',fanofffunction);
+        function bulbonfunction()
+            {
+            console.log("bulb on");
+ bulbref.set({
+        Bulb1:"ON"
+    });
+            }
+             function bulbofffunction()
+            {
+            console.log("bulb off");
+                bulbref.set({
+        Bulb1:"OFF"
+    });
+            }
+      function fanonfunction()
+            {
+            console.log("fan on");
+fanref.set({
+        Fan:"ON"
+    });
+            }
+             function fanofffunction()
+            {
+            console.log("fan off");
+                fanref.set({
+        Fan:"OFF"
+    });
+            }
+      
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+bref.on("value",getBulbData,err1Data);
+fref.on("value",getFanData,err2Data);
+ function getBulbData(data1){
+              var bulbarray=data1.val();
+               var bulbkeys=Object.keys(bulbarray);
+                var k=bulbkeys[0];
+                var Bulbstatusvar=bulbarray[k];
+             console.log(Bulbstatusvar);   
+     bulbtextvariable.innerHTML=Bulbstatusvar;
+           } 
+    function err1Data(){
+console.log(error);
+           } 
+  
+             function getFanData(data2){
+              var fanarray=data2.val();
+               var fankeys=Object.keys(fanarray);
+                var k=fankeys[0];
+                var Fanstatusvar=fanarray[k];
+             console.log(Fanstatusvar);  
+     fantextvariable.innerHTML=Fanstatusvar;
+           } 
+    function err2Data(){
+console.log(error);
+           } 
+            
+            
+            
+            
+      } 
     
 
-<script src="my.php"></script>
-     <script src="javas.js"></script>
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+        
+        
+        
+
+        
+        
+        </script>
+   
+   
+   
+    </head>
+    <body>
+        <div id='topview'><h1>Home Automation</h1>  </div>
+    
+        </br>
+
+        <h3>BULB</h3>      
+      <button id="bulbonid"><h3>ON</h3></button>  
+         <button id="bulboffid"> <h3>OFF</h3></button>  
+         </br>
+        </br>
+        <h3>FAN</h3>     
+          <button id="fanonid"><h3>ON</h3></button>  
+         <button id="fanoffid"> <h3>OFF</h3></button>  
+         
+     
+         <div id="statusview">
+         
+        <h1 id="ans">Status: </h1>
+        <h2>Live Bulb Status in Cloud: </h2>
+       <h4 id="Bulbtextid"> </h4>
+          <h2>Live Fan Status in Cloud: </h2>
+         <h4 id="Fantextid"></h4>
+        </br>
+        </div>
+        
+        
+        
+    </body>
+    
+   
 </html>
