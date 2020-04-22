@@ -1,241 +1,246 @@
+<!DOCTYPE html>
 <html>
-    <head>
-    
+<head>
+    <meta charset="utf-8">
+    <title>Weight Conertor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     
     <style>
-       #topview
-        {
-background-color: blue;
-            color: white;
-            font-family:cursive;
-         font-style: oblique;
-            font-size: 30px;
-            height: 100px;
-        }
-         #statusview
-        {
-background-color: darkcyan;
-            color: black;
-            font-family:sans-serif;
-         
-            font-size: 15px;
-            height:300px;
-        }
-        body
-        {
-           
-          background-color:
-        }
-        #bulbonid {
-background-color:
-            border-color:green;
-          border-radius:60px;
-        width: 100px;
-            height:50px;
-             border-bottom-style:ridge;
-         box-shadow: 1px 4px 7px 0.5px;
-        }
-        
-        #bulbonid:active{
-            background-color:darkgreen;
-            
-        }
-           #bulboffid{
-background-color:;
-                border-color:;
-                border-bottom-style:ridge;
-          
-          border-radius:60px;
-        width: 100px;
-            height:50px;
-                  box-shadow: 1px 4px 7px 0.5px;
-        }
-        #bulboffid:active{
-            background-color:darkred;
-            
-        }
-        
-         #fanonid {
-background-color:;
-            border-color:;
-          
-        width: 100px;
-            height:50px;
-                border-radius:60px;
-               box-shadow: 1px 4px 7px 0.5px;
-        }
-        
-        #fanonid:active{
-            background-color:darkgreen;
-            
-        }
-           #fanoffid{
-background-color:;
-                border-color:;
-           border-bottom-style:ridge;
-         
-        width: 100px;
-            height:50px;
-                 border-radius:60px;
-                        box-shadow: 1px 4px 7px 0.5px;
-        }
-        #fanoffid:active{
-            background-color:darkred;
-            
-        }
-        </style>
-    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
-   
-    <script>
-        
-        
-        
-        
-        window.onload=function()
-        {
-        
+        body{
 
- var config = {
-    apiKey: "AIzaSyDqqJjnwEHgkerltsdHIkRJ4FL6eSPN3sY",
-    authDomain: "auto-test-timer.firebaseapp.com",
-    databaseURL: "https://auto-test-timer.firebaseio.com",
-    projectId: "auto-test-timer",
-    storageBucket: "auto-test-timer.appspot.com",
-    messagingSenderId: "828951253649"
-  };
-  firebase.initializeApp(config);
-
-console.log(firebase);
-    
-    var database=firebase.database();
-            var bref=database.ref('Bulb');
-             var fref=database.ref('Fan');
-    var bulbref=database.ref('Bulb/');
-   var fanref=database.ref('Fan/');
-
-        var bulbonbut=document.getElementById("bulbonid");
-            var bulboffbut=document.getElementById("bulboffid");
-              var fanonbut=document.getElementById("fanonid");
-            var fanoffbut=document.getElementById("fanoffid");
- 
-            //text
-            var answer=document.getElementById("ans");
-           var bulbtextvariable=document.getElementById("Bulbtextid");
-            var fantextvariable=document.getElementById("Fantextid"); bulbonbut.addEventListener('click',bulbonfunction);
-             bulboffbut.addEventListener('click',bulbofffunction);
-             fanonbut.addEventListener('click',fanonfunction);
-             fanoffbut.addEventListener('click',fanofffunction);
-        function bulbonfunction()
-            {
-            console.log("bulb on");
- bulbref.set({
-        Bulb1:"ON"
-    });
-            }
-             function bulbofffunction()
-            {
-            console.log("bulb off");
-                bulbref.set({
-        Bulb1:"OFF"
-    });
-            }
-      function fanonfunction()
-            {
-            console.log("fan on");
-fanref.set({
-        Fan:"ON"
-    });
-            }
-             function fanofffunction()
-            {
-            console.log("fan off");
-                fanref.set({
-        Fan:"OFF"
-    });
-            }
+        background:#333;
+            color:#ffffff;
+        margin-top: 20px;
+        }
       
-          
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-bref.on("value",getBulbData,err1Data);
-fref.on("value",getFanData,err2Data);
- function getBulbData(data1){
-              var bulbarray=data1.val();
-               var bulbkeys=Object.keys(bulbarray);
-                var k=bulbkeys[0];
-                var Bulbstatusvar=bulbarray[k];
-             console.log(Bulbstatusvar);   
-     bulbtextvariable.innerHTML=Bulbstatusvar;
-           } 
-    function err1Data(){
-console.log(error);
-           } 
-  
-             function getFanData(data2){
-              var fanarray=data2.val();
-               var fankeys=Object.keys(fanarray);
-                var k=fankeys[0];
-                var Fanstatusvar=fanarray[k];
-             console.log(Fanstatusvar);  
-     fantextvariable.innerHTML=Fanstatusvar;
-           } 
-    function err2Data(){
-console.log(error);
-           } 
-            
-            
-            
-            
-      } 
-    
-
-        
-        
-        
-
-        
-        
-        </script>
-   
-   
-   
+    </style>
     </head>
-    <body>
-        <div id='topview'><h1>Home Automation</h1>  </div>
     
-        </br>
-
-        <h3>BULB</h3>      
-      <button id="bulbonid"><h3>ON</h3></button>  
-         <button id="bulboffid"> <h3>OFF</h3></button>  
-         </br>
-        </br>
-        <h3>FAN</h3>     
-          <button id="fanonid"><h3>ON</h3></button>  
-         <button id="fanoffid"> <h3>OFF</h3></button>  
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6  col-lg-12  ">
+                    
+                <h1 class="display-4 text-primary text-center mb-3">Weight Converter</h1>
+                <div class="row">
+                 
+                    <div class="col-md-8  col-lg-8">
+                           <form>
+                    <div class="form-group">
+                        
+                        <input id="input" type="number" class="form-control form-control-lg" placeholder="Enter Weight ">
+                    </div>
+ </form>
+                    </div>
+                    
+                       
+                    <div class="col-md-4 col-lg-4 ">
+                               
+                <div class="form-group">
+                    
+                  
+<select class="form-control" id='sell'>
+    
+    <option value="Kilogram" >Kilogram</option>
+     <option value="Gram">Gram</option>
+      <option>Pounds</option>
+       <option>Ounces</option>
+    
+    
+    
+</select>                    
+                    
+                    
+                </div>
+                    </div>
+                </div>
+                
          
-     
-         <div id="statusview">
-         
-        <h1 id="ans">Status: </h1>
-        <h2>Live Bulb Status in Cloud: </h2>
-       <h4 id="Bulbtextid"> </h4>
-          <h2>Live Fan Status in Cloud: </h2>
-         <h4 id="Fantextid"></h4>
-        </br>
+             
+                
+                
+                <div id="output">
+                   
+                     <div class="card bg-secondary mb-2" id="kg">
+                     <div class="card-block">
+                            <h4 class="m-3">Kilogram:</h4>
+                            <div id="koutput"></div>
+                         </div>
+                </div>
+                    <div class="card bg-primary mb-2 " id="pound">
+                     <div class="card-block">
+                            <h4 class="m-3">Pound:</h4>
+                            <div id="poutput"></div>
+                </div>
+      </div>
+                
+                   
+                    <div class="card bg-success mb-2"  id="gram">
+                     <div class="card-block">
+                            <h4 class="m-3">Gram:</h4>
+                            <div id="goutput"></div>
+                </div>
+      </div>
+                    <div class="card bg-danger mb-2"  id="ounce">
+                     <div class="card-block">
+                            <h4 class="m-3">Ounce:</h4>
+                            <div id="ozoutput"></div>
+                </div>
+                
+              
+      </div>
+                    
+                    
+                    
+                </div>
+                
+                
+                </div>
+                
+                
+            </div>
+            
+            
         </div>
         
+<script>
+        
+          
+       
+          
+         document.getElementById('output').style.visibility='hidden';
+            var b;
+             document.getElementById('sell').addEventListener('change',function(m){
+                 let types=m.target.value;
+                 switch(types){
+                         
+                     case "Kilogram":
+                         b=1;
+                    hy();
+                         break;
+                          
+                          case "Gram":
+                         b=2;
+                         hy();
+                         break;
+                         case "Pounds":
+                         b=3;
+                         hy();
+                         break;
+                          case "Ounces":
+                         b=4;
+                         hy();
+                         break;
+                         
+                         
+                         
+                         
+                 }
+
+                   
+             });
+                 
+    function hy(){
+
+    document.getElementById('input').value="";
+        
+                     document.getElementById('koutput').innerHTML=0;
+                     document.getElementById('poutput').innerHTML=0;
+             document.getElementById('goutput').innerHTML=0;
+                 document.getElementById('ozoutput').innerHTML=0;
+       
+                         
+        
+    }
+    
+    
+         document.getElementById('input').addEventListener('input',function(e){
+       document.getElementById('output').style.visibility='visible';
+           let numbera=e.target.value;
+                   
+             
+            switch(b){
+                    case 1:
+                    
+                
+                    
+                    document.getElementById('koutput').innerHTML=numbera;
+                  document.getElementById('poutput').innerHTML=numbera*2.20462;
+             document.getElementById('goutput').innerHTML=numbera*1000;
+                 document.getElementById('ozoutput').innerHTML=numbera*35.274;
+                    
+                   
+                         break;
+                    
+             
+                 
+                    
+                    
+                    
+         
+                case 2:  
+              document.getElementById('koutput').innerHTML=numbera*0.001;
+            document.getElementById('poutput').innerHTML=numbera*0.00220462;
+             document.getElementById('goutput').innerHTML=numbera;
+                 document.getElementById('ozoutput').innerHTML=numbera*0.035274;
+       break;
+        
+                          case 3:
+      document.getElementById('koutput').innerHTML=numbera*0.453592;
+            document.getElementById('poutput').innerHTML=numbera;
+             document.getElementById('goutput').innerHTML=numbera*453.592;
+                 document.getElementById('ozoutput').innerHTML=numbera*16;
+      break
+                         
+                          case 4:
+                     document.getElementById('koutput').innerHTML=numbera*0.453592;
+                     document.getElementById('poutput').innerHTML=numbera*2.20462;
+             document.getElementById('goutput').innerHTML=numbera*28.3495;
+                 document.getElementById('ozoutput').innerHTML=numbera;
+       
+                         break;
+                    
+                  
+                    default :
+                           document.getElementById('koutput').innerHTML=numbera;
+                  document.getElementById('poutput').innerHTML=numbera*2.20462;
+             document.getElementById('goutput').innerHTML=numbera*1000;
+                 document.getElementById('ozoutput').innerHTML=numbera*35.274;
+                     
+                    
+            }
+     
+
+            
+               
+                    
+
+            
+                 
+             });
+          
+            
+    
+            
+            
+      
+       
+        </script>
+        
+      
+        
+        
+        
+        
+        <script src="javas.js"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
         
     </body>
-    
-   
-</html>
+  
+  
+  
